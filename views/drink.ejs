@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drink!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                DRINK
+            </div>
+            <div class="col-sm-6 col-sm-offset-3">
+                <form id="beer-form" action="/drink" method="post">
+                    <input type="text" placeholder="Alcohol By Volume" name="abvString">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                    <img class="bDB" src="http://s3.amazonaws.com/brewerydb/Powered-By-BreweryDB.png">
+                </form>
+            </div>
+            <div class="col-sm-12 beers">
+                <% for (let i=0; i<beerData.data.length; i++){ %>
+                    <div class="col-sm-3 col-sm-offset-1 eachBeer text-center">
+                        <div class="col-sm-10 col-sm-offset1 aBeer text-center">
+                            <p><%= beerData.data[i].name%></p>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
